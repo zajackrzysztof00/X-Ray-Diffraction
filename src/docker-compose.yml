@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: ./backend
+    ports:
+      - "5004:5004"
+    environment:
+      - ASPNETCORE_URLS=http://+:5004
+
+  frontend:
+    build:
+      context: ./xray-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
