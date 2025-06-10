@@ -129,7 +129,7 @@ namespace XRayApi.Controllers
             //Modify data
             double WaveLength = Convert.ToDouble(input.Wavelength);
             double AusteniteProcentage = Convert.ToDouble(input.AusteniteContent)/100;
-            double CarbonProcentage = Convert.ToDouble(input.CarbonContent)/100;
+            double CarbonProcentage = Convert.ToDouble(input.CarbonContent);
             double Resolution = Convert.ToDouble(input.Resolution);
             double HalfWidth = Convert.ToDouble(input.HalfWidth);
 
