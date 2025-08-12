@@ -30,13 +30,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Optional: app.UseHttpsRedirection();
-app.UseCors("AllowReactApp");
+// Enable HTTPS redirection in production
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseAuthorization();
 app.MapControllers();
-
-app.UseAuthorization();
-
-app.MapControllers(); // Map your [ApiController] endpoints
 
 app.Run();
